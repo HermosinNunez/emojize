@@ -2,7 +2,7 @@
 function setWidth(value) {
 	// TODO: Control value to be a integer and show an error.
 	// TODO: Set width as a radio button: Large, Normal, Small sizes
-	if (Number.isInteger(value) && value > 0 && value < 1000) {
+	if (!isNaN(value) && value > 0 && value < 1000) {
 		scope.width = value;
 		scope.resizeImage();
 	}
