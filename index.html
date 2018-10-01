@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <!--TODO: CSS, YOU DINGUS!-->
+    <head>
+        <title>emoji-printer demo</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="emojiPrinterStyle.css">
+        <script src="emojiPrinter.js"></script>
+    </head>
+    <body>
+        <h1>Upload a 🆒 image and get it rendered as emotes/emojis❕</h1>
+        <h2></h2>
+        <br>
+        <!--Choose width-->
+        <form action="">
+            <p>Choose how many columns would you want the final results to be. Default=100</p>
+            <span>(For Discord chat, 40 is the ideal number if the screen resolution is 1920x1080)</span>:
+             <input type="text" name="width" 
+            onchange="setWidth(this.value)">
+        </form>
+        <!--import image-->
+        <input type="file" id="upload-image" name="Choose an image" accept="image/*"/>
+        <!--show original image-->
+        <div>
+            <img id="image-holder">
+            <button onclick="parseImage()">Ready! 👍</button>
+        </div>
+        <!--canvas-->
+        <canvas id="canvas"></canvas>
+    </body>
+</html>

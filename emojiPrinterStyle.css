@@ -1,0 +1,22 @@
+body {
+    font-family: 'Roboto Slab', serif;
+}
+#upload-image {
+    border: 2px dashed #ccc;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    padding: 1.5em;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#image-holder{
+    max-width: 300px;
+    max-height: 300px;
+    padding: 50px;
+}
