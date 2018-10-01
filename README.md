@@ -1,6 +1,6 @@
 # emojize  
 
-+Test it here ➡️ https://megamantecao.github.io/emojize/
++ Test it here ➡️ https://megamantecao.github.io/emojize/
 
 
 + **Original image:**  
