@@ -1,5 +1,7 @@
 body {
     font-family: 'Roboto Slab', serif;
+    margin: auto;
+    width: 50%;
 }
 #upload-image {
     border: 2px dashed #ccc;
