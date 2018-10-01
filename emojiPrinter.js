@@ -1,9 +1,11 @@
 
 function setWidth(value) {
-	//TODO: Control value to be a integer.
+	// TODO: Control value to be a integer and show an error.
 	// TODO: Set width as a radio button: Large, Normal, Small sizes
-	scope.width = value;
-	scope.resizeImage();
+	if (Number.isInteger(value) && value > 0 && value < 1000) {
+		scope.width = value;
+		scope.resizeImage();
+	}
 }
 
 function parseImage() {
@@ -23,6 +25,7 @@ function parseImage() {
 		finalString += scope.getClosestEmoji(r, g, b);
 	}
 	// TODO: Show the image in a proper HTML container 
+	console.clear();
 	console.log(finalString);
 }
 
@@ -38,7 +41,8 @@ function parseImage() {
 		"🍊":{ r:244, g:144, b:12 },
         "🏀":{ r:234,g: 84,b: 14},
 		"🍪":{ r:240,g: 173,b: 4},
-		"🍑":{ r: 255, g:136, b:108},
+		"🍑":{ r: 240, g:136, b:74},
+		"🤲🏻": {r: 247, g:215, b: 196},
 		"🍋":{ r: 255, g:204, b:77},
 		"🍈":{ r:181,g: 215,b: 68},
         "🐸":{ r:141,g: 187,b: 26},
@@ -47,11 +51,13 @@ function parseImage() {
 		"💦":{ r:93, g:173, b:236},
 		"💎":{ r: 181, g: 216, b:243},
         "🐋":{ r:52, g:211,b: 248},
-        "🔮":{ r:170,g: 151, b:247},
-		"🆒":{ r: 95,g: 158, b:206},
+		"🆒":{ r: 0, g: 90, b: 215},
+		"🅿️":{ r:20, g: 70, b: 200},
+		"🌌":{r: 59, g:77, b:141},
 		"🍇":{ r:146, g:102, b:204},
+		"🔮":{ r:170,g: 151, b:247},
         "📻":{ r:209,g: 209,b: 209},
-        "🌑":{ r:92, g:92, b:92},
+        "🌑":{ r:94, g:94, b:94},
         "🍞":{ r:249,g: 197, b:82},
         "💭":{ r:255,g: 255,b: 255},
         "🐨":{ r:204,g: 204,b: 204},
