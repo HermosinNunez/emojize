@@ -18,7 +18,8 @@ h1, span {
 #upload-image {
     color: #ccc;
     cursor: pointer;
-    width: 50%;
+    max-width: 50%;
+    max-height: 50%;
     margin: auto;
     display: inherit;
 }
