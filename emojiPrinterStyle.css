@@ -1,28 +1,58 @@
 body {
     font-family: 'Roboto Slab', serif;
-    margin: auto;
-    width: 50%;
-}
-#upload-image {
-    border: 2px dashed #ccc;
-    color: #ccc;
-    cursor: pointer;
-    font-size: 1.5em;
-    line-height: 1.5em;
-    padding: 1.5em;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    background-color: #353d41;
 }
 
-#image-holder{
+h1, span {
+    color: azure;
+    width: 50%;
+    margin: auto;
+}
+
+#input-container {
+    width: 50%;
+    margin: auto;
+}
+
+
+#upload-image {
+    color: #ccc;
+    cursor: pointer;
+    width: 50%;
+    margin: auto;
+    display: inherit;
+}
+
+#image-holder {
     max-width: 300px;
     max-height: 300px;
     padding: 50px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
 }
 
+#button-ready {
+    height: 33px;
+}
 #canvas {
     opacity: 0;
+}
+
+#result-container {
+    white-space: pre;
+    font-size: 10px;
+    width: fit-content;
+    letter-spacing: -3px;
+    line-height: 100%;
+    margin: auto;
+}
+
+#actions-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: stretch;
 }
