@@ -61,9 +61,7 @@ function parseImage() {
     // ALPHA would be i + 3  but we are not using it
     finalString += getClosestEmoji(r, g, b);
   }
-  // TODO: Show the image in a proper HTML container
-  console.clear();
-  console.log(finalString);
+  document.getElementById('result-container').innerHTML = finalString;
 }
 
 var emoteEntries = Object.keys(EMOTE_DICTIONARY);
