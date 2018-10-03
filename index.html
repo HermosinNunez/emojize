@@ -14,12 +14,11 @@
         <!--Choose width-->
         <form action="" id="input-container">
             <span>Choose how many columns would you want the final results to be. Default=100</span>
-            <span>(For Discord chat, 40 is the ideal number if the screen resolution is 1920x1080)</span>:
             <br><input type="text" name="width"
             onchange="setWidth(this.value)">
+            <!--import image-->
+            <input type="file" id="upload-image" name="Choose an image" accept="image/*"/>
         </form>
-        <!--import image-->
-        <input type="file" id="upload-image" name="Choose an image" accept="image/*"/>
         <!--show original image-->
         <div id="actions-container">
             <button id="button-ready" onclick="parseImage()">Ready! 👍</button>
