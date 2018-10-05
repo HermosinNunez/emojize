@@ -56,6 +56,7 @@ h1, span {
     width: fit-content;
     letter-spacing: -3px;
     margin: auto;
+    line-height: 1em;
 }
 
 #image-container {
