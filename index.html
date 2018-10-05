@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <!--TODO: CSS, YOU DINGUS!-->
     <head>
         <title>emoji-printer demo</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -12,16 +11,29 @@
         <h2></h2>
         <br>
         <!--Choose width-->
-        <form action="" id="input-container">
-            <span>Choose how many columns would you want the final results to be. Default=100</span>
-            <br><input type="text" name="width"
-            onchange="setWidth(this.value)">
+        <div id="input-container">
+            <span>Choose how many columns would you want the final results to be.</span>
+          <form action="" class="form-radio">
+            <input id="input-250" type="radio" name="input-width" value="250" onClick="setWidth(value)">
+            <label class="input-size" for="input-250">B I G (250 rows)</label>
+            <input id="input-100" type="radio" name="input-width" value="100" onClick="setWidth(value)" checked>
+            <label class="input-size" for="input-100">Standard (100 rows)</label>
+            <input id="input-40" type="radio" name="input-width" value="40" onClick="setWidth(value)">
+            <label class="input-size" for="input-40">Small (40 rows)</label>
+            <input id="input-20" type="radio" name="input-width" value="20" onClick="setWidth(value)">
+            <label class="input-size" for="input-20">Teeny tiny (20 rows)</label>
+          </form>
+          <div class="buttons-container">
             <!--import image-->
-            <input type="file" id="upload-image" name="Choose an image" accept="image/*"/>
-        </form>
-        <!--show original image-->
-        <div id="actions-container">
+            <label id="mock-up-input">
+              Choose an image
+              <input type="file" id="upload-image" name= accept="image/*"/>
+            </label>
             <button id="button-ready" onclick="parseImage()">Ready! 👍</button>
+          </div>
+        </div>
+        <!--show original image-->
+        <div id="image-container">
             <div id="image-wrapper">
                 <img id="image-holder">
             </div>
