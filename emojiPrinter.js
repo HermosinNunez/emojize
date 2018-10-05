@@ -2,6 +2,7 @@ var width = 100;
 var context;
 var image;
 var url;
+var resultContainer;
 
 const EMOTE_DICTIONARY = {
   '🌸': {r: 242, g: 132, b: 177},
@@ -38,7 +39,6 @@ const EMOTE_DICTIONARY = {
 };
 
 function setWidth(value) {
-  // TODO: Control value to be a integer and show an error.
   // TODO: Set width as a radio button: Large, Normal, Small sizes
   if (!isNaN(value) && value > 0 && value < 1000) {
     width = value;
@@ -48,26 +48,29 @@ function setWidth(value) {
 
 function parseImage() {
 
-  var imageData = context.getImageData(0, 0, image.width, image.height);
-  var r, g, b;
-  var finalString = '';
-  for(var i = 0; i < imageData.data.length; i += 4) {
-    if ((i / 4) % width === 0) {
-      finalString += '\n';
+  if (image) {
+    var imageData = context.getImageData(0, 0, image.width, image.height);
+    var r, g, b;
+    var finalString = '';
+    for(var i = 0; i < imageData.data.length; i += 4) {
+      if ((i / 4) % width === 0) {
+        finalString += '\n';
+      }
+      r = imageData.data[i];     // RED
+      g = imageData.data[i + 1]; // GREEN
+      b = imageData.data[i + 2]; // BLUE
+      // ALPHA would be i + 3  but we are not using it
+      finalString += getClosestEmoji(r, g, b);
     }
-    r = imageData.data[i];     // RED
-    g = imageData.data[i + 1]; // GREEN
-    b = imageData.data[i + 2]; // BLUE
-    // ALPHA would be i + 3  but we are not using it
-    finalString += getClosestEmoji(r, g, b);
+    // Add the result and show it
+    resultContainer.innerHTML = finalString;
   }
-  document.getElementById('result-container').innerHTML = finalString;
 }
 
 var emoteEntries = Object.keys(EMOTE_DICTIONARY);
 
 function resizeImage() {
-  // Creates a canvas from the file loaded that will actually have the prompted width.
+  // Create a hidden canvas from the file loaded that will actually have the prompted width.
   var canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
   image = new Image();
@@ -87,8 +90,10 @@ function resizeImage() {
 }
 
 window.onload = function() {
+  resultContainer = document.getElementById('result-container');
   var uploadImage = document.getElementById('upload-image');
   uploadImage.oninput = function() {
+    resultContainer.innerHTML = null;
     if (uploadImage.files && uploadImage.files[0]) {
       url = URL.createObjectURL(uploadImage.files[0]);
       document.getElementById('image-holder').src = url;
