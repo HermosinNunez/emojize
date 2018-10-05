@@ -7,34 +7,45 @@ h1, span {
     color: azure;
     width: 50%;
     margin: auto;
+    text-align: center;
 }
 
 #input-container {
     width: 50%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
+#mock-up-input {
+    border-radius: 0.6em;
+    background: aliceblue;
+    padding: 0.4em;
+    cursor: pointer;
+}
 
 #upload-image {
-    color: #ccc;
-    cursor: pointer;
-    max-width: 50%;
-    max-height: 50%;
-    margin: auto;
+    display: none;
 }
 
 #image-holder {
-    max-width: 300px;
-    max-height: 300px;
-    padding: 50px;
+    max-width: 19em;
+    max-height: 19em;
+    padding: 3em;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 0;
 }
 
 #button-ready {
-    height: 33px;
+    height: 2.7em;
+    border: none;
+    border-radius: 0.6em;;
+    cursor: pointer;
+    margin-left: auto;
+    background: aliceblue;
 }
+
 #canvas {
     opacity: 0;
 }
@@ -44,15 +55,30 @@ h1, span {
     font-size: 10px;
     width: fit-content;
     letter-spacing: -3px;
-    line-height: 100%;
     margin: auto;
 }
 
-#actions-container {
-    display:flex;
+#image-container {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
     align-items: stretch;
+}
+
+.input-size {
+    border: dashed aliceblue;
+    border-radius: 0.6em;;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.form-radio {
+    display: flex;
+}
+
+.buttons-container {
+    margin-top: 3%;
+    display: flex;
 }
