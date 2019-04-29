@@ -40,7 +40,7 @@ h1, span {
 #button-ready {
     height: 2.7em;
     border: none;
-    border-radius: 0.6em;;
+    border-radius: 0.6em;
     cursor: pointer;
     margin-left: auto;
     background: aliceblue;
@@ -70,7 +70,8 @@ h1, span {
 
 .input-size {
     border: dashed aliceblue;
-    border-radius: 0.6em;;
+    border-radius: 0.6em;
+    text-align: center;
     color: aliceblue;
     cursor: pointer;
 }
