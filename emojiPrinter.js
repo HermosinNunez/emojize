@@ -1,8 +1,8 @@
-var width = 100;
-var context;
-var image;
-var url;
-var resultContainer;
+let width = 100;
+let context;
+let image;
+let url;
+let resultContainer;
 
 const EMOTE_DICTIONARY = {
   '🌸': {r: 242, g: 132, b: 177},
@@ -71,12 +71,12 @@ var emoteEntries = Object.keys(EMOTE_DICTIONARY);
 
 function resizeImage() {
   // Create a hidden canvas from the file loaded that will actually have the prompted width.
-  var canvas = document.getElementById('canvas');
+  let canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
   image = new Image();
-  var ratio = 1;
+  let ratio = 1;
   image.onload = function() {
-    // Resize to speicific number of pixels.
+    // Resize to specific number of pixels.
     ratio = width / image.width;
     image.width = width;
     image.height *= ratio;
@@ -91,7 +91,7 @@ function resizeImage() {
 
 window.onload = function() {
   resultContainer = document.getElementById('result-container');
-  var uploadImage = document.getElementById('upload-image');
+  const uploadImage = document.getElementById('upload-image');
   uploadImage.oninput = function() {
     resultContainer.innerHTML = null;
     if (uploadImage.files && uploadImage.files[0]) {
